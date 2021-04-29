@@ -23,7 +23,7 @@ public class HomeController {
         return "index";
     }
 
-    @ModelAttribute
+    @ModelAttribute("institutions")
     public Collection<Institution> institutions(){
         return institutionService.findAll();
     }
