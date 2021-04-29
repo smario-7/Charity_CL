@@ -35,6 +35,10 @@ public class HomeController {
     public Integer sumOfQuantity() {
         return donationService.sumAllByQuantity();
     }
+    @ModelAttribute("allDonations")
+    public Long countAllDonations(){
+        return donationService.countAllDonations();
+    }
 
 
 }
