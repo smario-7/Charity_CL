@@ -10,11 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/style.css/"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<%@include file="header.jsp"%>
+<%@include file="header.jsp" %>
 
 <section class="stats">
     <div class="container container--85">
@@ -105,7 +105,7 @@
 
 </section>
 
-<%@include file="footer.jsp"%>
+    <%@include file="footer.jsp"%>
 
 <script src="js/app.js"></script>
 </body>

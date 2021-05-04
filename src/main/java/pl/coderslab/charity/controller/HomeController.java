@@ -22,7 +22,7 @@ public class HomeController {
     }
 
     @RequestMapping("/")
-    public String homeAction(Model model){
+    public String homeAction(){
         return "index";
     }
 
