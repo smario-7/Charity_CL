@@ -11,6 +11,7 @@ import pl.coderslab.charity.service.CategoryService;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 @Controller
@@ -31,14 +32,14 @@ public class DonationController {
         model.addAttribute("donation", new DonationFormDto());
         return "formDonation";
     }
-    @ResponseBody
+
     @PostMapping
-    public String postFormDonation(DonationFormDto donation, BindingResult bindingResult){
+    public String postFormDonation(@ModelAttribute("donation") @Valid DonationFormDto donation, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "error";
         }
         donationService.add(donation);
-        return donation.toString();
+        return "redirect:/form-confirmation";
     }
 
     @ModelAttribute("categories")

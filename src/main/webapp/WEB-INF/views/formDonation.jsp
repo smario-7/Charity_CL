@@ -118,7 +118,7 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <input type="text" name="address" path="street"/> </label>
+                            <label> Ulica <input type="text" name="street" path="street"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -133,7 +133,7 @@
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <input type="phone" name="phone" path=""phoneNumber/>
+                                Numer telefonu <input type="phone" name="phoneNumber" path=""phoneNumber/>
                             </label>
                         </div>
                     </div>
@@ -167,22 +167,21 @@
                 <h3>Podsumowanie Twojej darowizny</h3>
 
                 <div class="summary">
-
                     <div class="form-section">
                         <h4>Oddajesz:</h4>
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span class="summary--text">
+                                    4 worki ubrań w dobrym stanie dla dzieci
+                                </span>
                             </li>
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >instytucja</span
-                                >
+                                <span class="summary--text">
+                                    Dla fundacji "Mam marzenie" w Warszawie
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -191,7 +190,7 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
                             <ul>
-                                <li>${donation.street}</li>
+                                <li>Prosta 51</li>
                                 <li>Warszawa</li>
                                 <li>99-098</li>
                                 <li>123 456 789</li>
