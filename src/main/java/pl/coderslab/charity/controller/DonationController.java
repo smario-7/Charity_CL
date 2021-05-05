@@ -1,14 +1,14 @@
 package pl.coderslab.charity.controller;
 
-import antlr.actions.python.CodeLexer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import pl.coderslab.charity.dto.DonationFormDto;
 import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.service.CategoryService;
+import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
 
 import java.util.Collection;
@@ -18,15 +18,27 @@ import java.util.Collection;
 public class DonationController {
     private final CategoryService categoryService;
     private final InstitutionService institutionService;
+    private final DonationService donationService;
 
-    public DonationController(CategoryService categoryService, InstitutionService institutionService) {
+    public DonationController(CategoryService categoryService, InstitutionService institutionService, DonationService donationService) {
         this.categoryService = categoryService;
         this.institutionService = institutionService;
+        this.donationService = donationService;
     }
 
     @GetMapping
-    public String formDonation(){
+    public String formDonation(Model model) {
+        model.addAttribute("donation", new DonationFormDto());
         return "formDonation";
+    }
+    @ResponseBody
+    @PostMapping
+    public String postFormDonation(DonationFormDto donation, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            return "error";
+        }
+        donationService.add(donation);
+        return donation.toString();
     }
 
     @ModelAttribute("categories")
