@@ -49,8 +49,9 @@
                         <label>
                             <input
                                 type="checkbox"
-                                name="category"
-                                value="id"
+                                name="categories"
+                                items="${categories}"
+                                value="${category.id}"
                                 path="categories"
                             />
                             <span class="checkbox"></span>
@@ -74,7 +75,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <input type="number" name="bags" step="1" min="1" path="quantity"/>
+                        <input type="number" name="quantity" step="1" min="1" path="quantity"/>
                     </label>
                 </div>
 
@@ -92,7 +93,8 @@
                 <c:forEach items="${institutions}" var="institution">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <input type="radio" name="institution" value="id" path="institution"/>
+                            <input type="radio" name="institution" path="institution"
+                                   items="${institutions}" value="${institution.id}" />
                             <span class="checkbox radio"></span>
                             <span class="description">
                             <div class="title">${institution.name}</div>
@@ -127,7 +129,7 @@
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <input type="text" name="postcode" path="zipCode"/>
+                                Kod pocztowy <input type="text" name="zipCode" path="zipCode"/>
                             </label>
                         </div>
 
@@ -141,17 +143,17 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <input type="date" name="data" path="pickUpDate"/> </label>
+                            <label> Data <input type="date" name="pickUpDate" path="pickUpDate"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <input type="time" name="time" path="pickUpTime"/> </label>
+                            <label> Godzina <input type="time" name="pickUpTime" path="pickUpTime"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <textarea name="more_info" rows="5" path="pickUpComment"></textarea>
+                                <textarea name="pickUpComment" rows="5" path="pickUpComment"></textarea>
                             </label>
                         </div>
                     </div>

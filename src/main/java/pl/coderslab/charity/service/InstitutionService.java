@@ -5,5 +5,5 @@ import pl.coderslab.charity.model.Institution;
 import java.util.List;
 
 public interface InstitutionService {
-    List<Institution> findAll();
+    List<Institution> findNFirst(int size);
 }

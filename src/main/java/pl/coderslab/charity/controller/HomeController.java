@@ -1,7 +1,6 @@
 package pl.coderslab.charity.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.Institution;
@@ -28,7 +27,7 @@ public class HomeController {
 
     @ModelAttribute("institutions")
     public Collection<Institution> institutions(){
-        return institutionService.findAll();
+        return institutionService.findNFirst(4);
     }
 
     @ModelAttribute("allQuantity")

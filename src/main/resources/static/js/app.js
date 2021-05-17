@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // TODO: get data from inputs and show them in summary
 
 
-            let categorysForm = this.$form.querySelectorAll("[name='category']:checked");
+            let categorysForm = this.$form.querySelectorAll("[name='categories']:checked");
             let categorysAll = "";
             categorysForm.forEach(category => {
                 categorysAll += "; " + category.nextElementSibling.nextElementSibling.innerText.trimStart(4).trimEnd(4);
@@ -185,11 +185,11 @@ document.addEventListener("DOMContentLoaded", function () {
             let deliveryColumn = this.$form.querySelectorAll(".summary .form-section--column li");
             deliveryColumn[0].innerText = this.$form.querySelector("[name='street']").value;
             deliveryColumn[1].innerText = this.$form.querySelector("[name='city']").value;
-            deliveryColumn[2].innerText = this.$form.querySelector("[name='postcode']").value;
+            deliveryColumn[2].innerText = this.$form.querySelector("[name='zipCode']").value;
             deliveryColumn[3].innerText = this.$form.querySelector("[name='phoneNumber']").value;
-            deliveryColumn[4].innerText = this.$form.querySelector("[name='data']").value;
-            deliveryColumn[5].innerText = this.$form.querySelector("[name='time']").value;
-            deliveryColumn[6].innerText = this.$form.querySelector("[name='more_info']").value;
+            deliveryColumn[4].innerText = this.$form.querySelector("[name='pickUpDate']").value;
+            deliveryColumn[5].innerText = this.$form.querySelector("[name='pickUpTime']").value;
+            deliveryColumn[6].innerText = this.$form.querySelector("[name='pickUpComment']").value;
         }
 
     }

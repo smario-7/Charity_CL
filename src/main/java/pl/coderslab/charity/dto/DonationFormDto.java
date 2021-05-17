@@ -1,21 +1,35 @@
 package pl.coderslab.charity.dto;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class DonationFormDto {
 
+    @Digits(integer = 3, fraction = 0)
     private int quantity;
+    @NotNull
     private List<Long> categories;
+    @NotNull
     private Long institution;
+    @NotBlank
     private String street;
+    @NotBlank
     private String city;
+    @Pattern(regexp = "([0-9]{2})-([0-9]{3})")
     private String zipCode;
+    @Pattern(regexp = "([0-9]{9})")
     private String phoneNumber;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime pickUpTime;
+    @Size(max = 255)
     private String pickUpComment;
 
     public String getPhoneNumber() {
@@ -96,5 +110,21 @@ public class DonationFormDto {
 
     public void setPickUpComment(String pickUpComment) {
         this.pickUpComment = pickUpComment;
+    }
+
+    @Override
+    public String toString() {
+        return "DonationFormDto{" +
+                "quantity=" + quantity +
+                ", categories=" + categories +
+                ", institution=" + institution +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", pickUpDate=" + pickUpDate +
+                ", pickUpTime=" + pickUpTime +
+                ", pickUpComment='" + pickUpComment + '\'' +
+                '}';
     }
 }

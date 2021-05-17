@@ -1,12 +1,11 @@
 package pl.coderslab.charity.service;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.repository.InstitutionRepository;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class InstitutionServiceImp implements InstitutionService {
@@ -16,7 +15,7 @@ public class InstitutionServiceImp implements InstitutionService {
         this.institutionRepository = institutionRepository;
     }
 
-    public List<Institution> findAll(){
-        return new ArrayList<>(institutionRepository.findAll());
+    public List<Institution> findNFirst(int size){
+        return institutionRepository.findAll(PageRequest.of(0,size)).getContent();
     }
 }

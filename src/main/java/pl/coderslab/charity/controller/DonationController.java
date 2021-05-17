@@ -1,5 +1,6 @@
 package pl.coderslab.charity.controller;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,10 +14,12 @@ import pl.coderslab.charity.service.InstitutionService;
 
 import javax.validation.Valid;
 import java.util.Collection;
+import org.slf4j.Logger;
 
 @Controller
 @RequestMapping("/formdonation")
 public class DonationController {
+    private static final Logger log = LoggerFactory.getLogger(DonationController.class);
     private final CategoryService categoryService;
     private final InstitutionService institutionService;
     private final DonationService donationService;
@@ -36,10 +39,11 @@ public class DonationController {
     @PostMapping
     public String postFormDonation(@ModelAttribute("donation") @Valid DonationFormDto donation, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
-            return "error";
+            return "/formdonation";
         }
+        log.info("testujemy !!!" + donation.toString());
         donationService.add(donation);
-        return "redirect:/form-confirmation";
+        return "form-confirmation";
     }
 
     @ModelAttribute("categories")
@@ -49,7 +53,7 @@ public class DonationController {
 
     @ModelAttribute("institutions")
     public Collection<Institution> institutions(){
-        return institutionService.findAll();
+        return institutionService.findNFirst(10);
     }
 
 
