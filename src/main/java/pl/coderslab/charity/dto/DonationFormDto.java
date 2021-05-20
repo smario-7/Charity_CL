@@ -12,39 +12,35 @@ import java.util.List;
 public class DonationFormDto {
 
     @Digits(integer = 3, fraction = 0)
-    private int quantity;
-    @NotNull
+    @NotNull (message = "nie podałeś ile worków")
+    private Integer quantity;
+    @NotEmpty (message = "nie wybrałeś kategorii")
     private List<Long> categories;
-    @NotNull
+    @NotNull (message = "nie wybrałeś instytucji")
     private Long institution;
     @NotBlank
     private String street;
     @NotBlank
     private String city;
-    @Pattern(regexp = "([0-9]{2})-([0-9]{3})")
+    @Pattern(regexp = "([0-9]{2})-([0-9]{3})", message = "błędny format (XX-XXX)")
     private String zipCode;
-    @Pattern(regexp = "([0-9]{9})")
+    @Pattern(regexp = "([0-9]{9})", message = "błędny format (XXXXXXXXX)")
     private String phoneNumber;
+    @Future (message = "zaznacz przyszłą datę")
+    @NotNull (message = "wybierz datę")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
+    @NotNull (message = "podaj godzinę odbioriu")
     @DateTimeFormat(pattern = "HH:mm")
     private LocalTime pickUpTime;
-    @Size(max = 255)
+    @Size(max = 255, message = "maksymalnie 255 znaków")
     private String pickUpComment;
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
@@ -86,6 +82,14 @@ public class DonationFormDto {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public LocalDate getPickUpDate() {

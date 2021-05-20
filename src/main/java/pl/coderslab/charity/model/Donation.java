@@ -30,6 +30,7 @@ public class Donation {
     private String zipCode;
     @Pattern(regexp = "([0-9]{9})")
     private String phoneNumber;
+    @Future
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     @DateTimeFormat(pattern = "HH:mm")

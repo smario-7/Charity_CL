@@ -170,14 +170,15 @@ document.addEventListener("DOMContentLoaded", function () {
             let categorysForm = this.$form.querySelectorAll("[name='categories']:checked");
             let categorysAll = "";
             categorysForm.forEach(category => {
-                categorysAll += "; " + category.nextElementSibling.nextElementSibling.innerText.trimStart(4).trimEnd(4);
+                categorysAll += "; " + category.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML.trimStart(4).trimEnd(4);
             });
-            let institutionForm = this.$form.querySelector("[name='institution']:checked");
+
+            let institutionForm = this.$form.querySelector("input[name='institution']:checked");
 
             let summaryText = this.$form.getElementsByClassName("summary--text");
 
             summaryText[0].innerText =
-                this.$form.querySelector("[path='quantity']").value
+                this.$form.querySelector("[name='quantity']").value
                 + " worki "
                 + categorysAll;
             summaryText[1].innerText = institutionForm.nextElementSibling.nextElementSibling.innerText;

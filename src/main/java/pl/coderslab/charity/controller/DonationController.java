@@ -14,6 +14,8 @@ import pl.coderslab.charity.service.InstitutionService;
 
 import javax.validation.Valid;
 import java.util.Collection;
+import java.util.TimeZone;
+
 import org.slf4j.Logger;
 
 @Controller
@@ -39,9 +41,10 @@ public class DonationController {
     @PostMapping
     public String postFormDonation(@ModelAttribute("donation") @Valid DonationFormDto donation, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
-            return "/formdonation";
+            return "formDonation";
         }
         log.info("testujemy !!!" + donation.toString());
+        log.info("{}", TimeZone.getDefault());
         donationService.add(donation);
         return "form-confirmation";
     }
@@ -53,7 +56,7 @@ public class DonationController {
 
     @ModelAttribute("institutions")
     public Collection<Institution> institutions(){
-        return institutionService.findNFirst(10);
+        return institutionService.findNFirst(20);
     }
 
 
