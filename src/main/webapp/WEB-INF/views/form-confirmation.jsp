@@ -13,7 +13,7 @@
 <header class="header--form-page">
   <nav class="container container--70">
     <ul class="nav--actions">
-      <li class="logged-user">
+      <li class="logged-matchingUser">
         Witaj Agata
         <ul class="dropdown">
           <li><a href="#">Profil</a></li>
