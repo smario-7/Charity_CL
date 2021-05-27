@@ -3,8 +3,8 @@ package pl.coderslab.charity.service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.dto.UserWriteDto;
+import pl.coderslab.charity.model.CharityUser;
 import pl.coderslab.charity.model.Role;
-import pl.coderslab.charity.model.MatchingUser;
 import pl.coderslab.charity.repository.RoleRepository;
 import pl.coderslab.charity.repository.UserRepository;
 
@@ -20,18 +20,18 @@ public class UserServiceImp implements UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public MatchingUser findByEmail(String email) {
+    public CharityUser findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 
     public void save(UserWriteDto userWriteDto) {
-        MatchingUser matchingUser = new MatchingUser();
-        matchingUser.setEmail(userWriteDto.getEmail());
-        matchingUser.setPassword(passwordEncoder.encode(userWriteDto.getPassword()));
-        matchingUser.enable();
+        CharityUser charityUser = new CharityUser();
+        charityUser.setEmail(userWriteDto.getEmail());
+        charityUser.setPassword(passwordEncoder.encode(userWriteDto.getPassword()));
+        charityUser.enable();
         Role roles = roleRepository.findByName("ROLE_USER");
-        matchingUser.addRole(roles);
-        userRepository.save(matchingUser);
+        charityUser.addRole(roles);
+        userRepository.save(charityUser);
     }
 
     public boolean emailExist(UserWriteDto userWriteDto){

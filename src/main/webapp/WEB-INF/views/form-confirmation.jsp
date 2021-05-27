@@ -13,7 +13,7 @@
 <header class="header--form-page">
   <nav class="container container--70">
     <ul class="nav--actions">
-      <li class="logged-matchingUser">
+      <li class="logged-user">
         Witaj Agata
         <ul class="dropdown">
           <li><a href="#">Profil</a></li>
@@ -40,4 +40,4 @@
   </div>
 </header>
 
-<%@include file="footer.jsp"%>
+<%@include file="includeJSP/footer.jsp"%>

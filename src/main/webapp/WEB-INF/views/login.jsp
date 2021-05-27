@@ -4,7 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<%@include file="header.jsp" %>
+<%@include file="includeJSP/header.jsp" %>
 
 <section class="login-page">
   <h2>Zaloguj się</h2>
@@ -25,4 +25,4 @@
   </form>
 </section>
 
-<%@include file="footer.jsp"%>
+<%@include file="includeJSP/footer.jsp"%>

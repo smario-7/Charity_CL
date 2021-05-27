@@ -34,9 +34,10 @@ public class RegisterController {
             return "register";
         } else if (!userService.passwordConfirm(user)) {
             bindingResult.rejectValue("passwordRepeat", "passwordRepeat","różne hasła");
-            return "register";
-        } else if (userService.emailExist(user)){
-            bindingResult.rejectValue("email","email", "email już istneje");
+            if (userService.emailExist(user)){
+                bindingResult.rejectValue("email","email", "email już istneje");
+                return "register";
+            }
             return "register";
         }
         userService.save(user);

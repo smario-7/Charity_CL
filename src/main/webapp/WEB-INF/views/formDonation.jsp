@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<%@include file="header.jsp" %>
+<%@include file="includeJSP/header.jsp" %>
 
 <section class="form--steps">
     <div class="form--steps-instructions">
@@ -229,7 +229,7 @@
     </div>
 </section>
 
-<%@include file="footer.jsp" %>
+<%@include file="includeJSP/footer.jsp" %>
 
 <script src="js/app.js"></script>
 </body>

@@ -4,7 +4,7 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 
-<%@include file="header.jsp" %>
+<%@include file="includeJSP/header.jsp" %>
 
 <section class="stats">
     <div class="container container--85">
@@ -95,5 +95,5 @@
 
 </section>
 
-    <%@include file="footer.jsp"%>
+    <%@include file="includeJSP/footer.jsp"%>
 

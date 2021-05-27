@@ -1,10 +1,10 @@
 package pl.coderslab.charity.service;
 
 import pl.coderslab.charity.dto.UserWriteDto;
-import pl.coderslab.charity.model.MatchingUser;
+import pl.coderslab.charity.model.CharityUser;
 
 public interface UserService {
-    MatchingUser findByEmail(String email);
+    CharityUser findByEmail(String email);
 
     void save(UserWriteDto userWriteDto);
 

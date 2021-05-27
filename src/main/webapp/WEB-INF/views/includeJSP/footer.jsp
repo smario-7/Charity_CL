@@ -23,5 +23,6 @@
 </footer>
 
 <script src="js/app.js"></script>
+<script src="js/appUser.js"></script>
 </body>
 </html>
