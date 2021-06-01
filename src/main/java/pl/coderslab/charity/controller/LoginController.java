@@ -14,12 +14,12 @@ public class LoginController {
         return "login";
     }
 
-//    @GetMapping("logout")
-//    public String getLogout(){
-//        return "logout";
-//    }
-//    @PostMapping("logout")
-//    public String logout(){
-//        return "logout";
-//    }
+    @GetMapping("logout")
+    public String getLogout(){
+        return "logout";
+    }
+    @PostMapping("logout")
+    public String postLogout(){
+        return "logout";
+    }
 }
