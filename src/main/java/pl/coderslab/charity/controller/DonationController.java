@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.charity.dto.DonationFormDto;
+import pl.coderslab.charity.dto.InstitutionReadDto;
 import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.service.CategoryService;
@@ -55,7 +56,7 @@ public class DonationController {
     }
 
     @ModelAttribute("institutions")
-    public Collection<Institution> institutions(){
+    public Collection<InstitutionReadDto> institutions(){
         return institutionService.findNFirst(20);
     }
 

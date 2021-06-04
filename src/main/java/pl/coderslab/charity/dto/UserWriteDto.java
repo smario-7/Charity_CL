@@ -1,7 +1,5 @@
 package pl.coderslab.charity.dto;
 
-import org.hibernate.validator.constraints.UniqueElements;
-
 import javax.validation.constraints.*;
 
 public class UserWriteDto {

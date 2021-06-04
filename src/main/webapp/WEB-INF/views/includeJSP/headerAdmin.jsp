@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>Charity</title>
-  <link rel="stylesheet" href="../css/style.css"/>
-  <link rel="stylesheet" href="../css/styleAdmin.css"/>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="stylesheet" href="/css/styleAdmin.css"/>
 </head>
 <body>
 
@@ -21,7 +21,7 @@
         <ul class="dropdown">
           <li><a href="">Profil</a></li>
           <li><a href="#">Moje zbiórki</a></li>
-          <li><a href="/admin/institution">Instytucje</a></li>
+          <li><a href="/admin/institution">Fundacje</a></li>
           <li><a href="#">Użytkownicy</a></li>
           <li><a href="#">Administratorzy</a></li>
           <li><a href="/logout">Wyloguj</a></li>

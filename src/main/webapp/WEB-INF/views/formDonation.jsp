@@ -100,8 +100,8 @@
                                               value="${institution.id}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
-                                <span class="title">${institution.name}</span>
-                                <pan class="subtitle">${institution.description} </span>
+                                <span class="title">Fundacja "${institution.name}"</span>
+                                <pan class="subtitle">Cel i misja: ${institution.description} </span>
                             </span>
                         </label>
                     </div>

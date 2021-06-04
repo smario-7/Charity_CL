@@ -3,6 +3,7 @@ package pl.coderslab.charity.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.charity.dto.InstitutionReadDto;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.InstitutionService;
@@ -26,7 +27,7 @@ public class HomeController {
     }
 
     @ModelAttribute("institutions")
-    public Collection<Institution> institutions(){
+    public Collection<InstitutionReadDto> institutions(){
         return institutionService.findNFirst(4);
     }
 
