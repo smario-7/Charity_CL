@@ -1,27 +1,22 @@
-package pl.coderslab.charity.model;
+package pl.coderslab.charity.dto;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+
+import java.util.Arrays;
 import java.util.List;
 
-@Entity
-@Table(name = "donation")
-public class Donation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class DonationFormDto {
+
     @Digits(integer = 3, fraction = 0)
     private int quantity;
     @NotNull
-    @ManyToMany
-    private List<Category> categories;
+    private List<Long> categories;
     @NotNull
-    @ManyToOne
-    private Institution institution;
+    private Long institution;
     @NotBlank
     private String street;
     @NotBlank
@@ -45,14 +40,6 @@ public class Donation {
         this.phoneNumber = phoneNumber;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public int getQuantity() {
         return quantity;
     }
@@ -61,19 +48,19 @@ public class Donation {
         this.quantity = quantity;
     }
 
-    public List<Category> getCategories() {
+    public List<Long> getCategories() {
         return categories;
     }
 
-    public void setCategories(List<Category> categories) {
+    public void setCategories(List<Long> categories) {
         this.categories = categories;
     }
 
-    public Institution getInstitution() {
+    public Long getInstitution() {
         return institution;
     }
 
-    public void setInstitution(Institution institution) {
+    public void setInstitution(Long institution) {
         this.institution = institution;
     }
 
@@ -123,5 +110,21 @@ public class Donation {
 
     public void setPickUpComment(String pickUpComment) {
         this.pickUpComment = pickUpComment;
+    }
+
+    @Override
+    public String toString() {
+        return "DonationFormDto{" +
+                "quantity=" + quantity +
+                ", categories=" + categories +
+                ", institution=" + institution +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", pickUpDate=" + pickUpDate +
+                ", pickUpTime=" + pickUpTime +
+                ", pickUpComment='" + pickUpComment + '\'' +
+                '}';
     }
 }
