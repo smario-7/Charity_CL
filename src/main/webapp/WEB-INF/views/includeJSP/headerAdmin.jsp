@@ -23,7 +23,7 @@
           <li><a href="#">Moje zbiórki</a></li>
           <li><a href="/admin/institution">Fundacje</a></li>
           <li><a href="#">Użytkownicy</a></li>
-          <li><a href="#">Administratorzy</a></li>
+          <li><a href="/admin/listofadmins">Administratorzy</a></li>
           <li><a href="/logout">Wyloguj</a></li>
         </ul>
       </li>
